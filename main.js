@@ -141,3 +141,26 @@ function checkEvenNumber(number) {
     .catch((error) => {
       console.error(error); // "Errore"
     });
+
+
+    function ready(){
+      return new Promise((resolve, reject) =>{
+          resolve("successo");
+      })
+    }
+    ready().then(()=>{
+      setTimeout(()=>{
+        console.log("pronto");
+      }, 5000)
+    })
+
+  let loadData = async()=>{
+    let request = await fetch("https://invalid.url/");
+    try{
+      console.log(request);
+    }
+    catch(e){
+      console.log("errore");
+    }
+  }
+  loadData();
